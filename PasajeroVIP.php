@@ -83,7 +83,7 @@ class PasajeroVIP extends Pasajero{
                 $this->setNroViajeroFrecuente($nuevoDato);
                 break;
             case 6:
-                $this->setCantMillas($cantMillas);
+                $this->setCantMillas($nuevoDato);
                 break;
             default:
 
