@@ -1,15 +1,15 @@
 <?php
 
-class ResponsableV {
+class ResponsableV extends Persona {
     private $nroEmpleado;
     private $nroLicencia;
-    private $nombreYapellido;
 
-    public function __construct($nroEmpleado, $nroLicencia, $nombreYapellido)
+    public function __construct($nombre, $apellido, $nroEmpleado, $nroLicencia)
     {      
+        parent::__construct($nombre,$apellido);
         $this->nroEmpleado = $nroEmpleado;
         $this->nroLicencia = $nroLicencia;
-        $this->nombreYapellido = $nombreYapellido;
+        
     }
 
 
@@ -19,9 +19,6 @@ class ResponsableV {
     public function getNroLicencia(){
         return $this->nroLicencia;
     }
-    public function getNombreYapellido(){
-        return $this->nombreYapellido;
-    }
 
     public function setNroEmpleado($newNroEmpleado){
         $this->nroEmpleado = $newNroEmpleado;
@@ -29,14 +26,11 @@ class ResponsableV {
     public function setNroLicencia($newNroLicencia){
         $this->nroLicencia = $newNroLicencia;
     }
-    public function setNombreYapellido($newNombreYapellido){
-        $this->nombreYapellido = $newNombreYapellido;
-    }
 
 
     public function __toString()
     {
-        return "nombre y apellido: ".$this->getNombreYapellido()."\n".
+        return parent::__toString()."\n".
         "numero de empleado: ".$this->getNroEmpleado()."\n".
         "numero de licencia: ".$this->getNroLicencia()."\n";
     }
